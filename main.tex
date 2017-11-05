@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{biblatex}
+\addbibresource{biblio.bib}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage[frenchb]{babel}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ right=30mm
+ }
+ \setlength{\parskip}{1em}
+
+
+\title{Mémoire de M2 : La connaissance du métier pour un logiciel de qualité}
+
+
+\author{Khaoula Zitoun}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction }
+
+Lors de mon stage de première année de Master MIAGE, j’ai fait parti d’une équipe de maitrise d’ouvrage (MOA). J’ai donc souvent été en relation avec les équipes de maitrise d’œuvre interne de la société. J’ai par ailleurs dû coder pour des besoins de data visualisations. Bien que j’avais en ma possession les schémas entité - association des bases de données, j’ai quelque peu eu du mal à trouver rapidement les champs dont j’avais besoin, et pour cause, l’équipe de maîtrise d'oeuvre (MOE) n’avait pas nommé ces champs tel que nous les nommions en MOA. Par exemple, ce que j’appelais  \og vendor \fg  s’appellait \og channel \fg. 
+
+
+Cet exemple illustre un réel problème :  celui de la communication entre MOA et MOE. Il soulève également le problème de la compréhension du métier; on peut se poser la question suivante "Sommes-nous sûrs et certains que la MOE comprend bien la différence entre ces deux termes dans notre domaine ?".
+
+
+Ce fossé entre équipe de développement et équipe fonctionnelle a de réelles conséquences. Parmi ces dernières, on peut citer le temps, la qualité et par extension le coût du logiciel. En effet, une mauvaise compréhension du métier ou une mauvaise communication entre les équipes entraine souvent des modifications du logiciel, qu’il s’agisse de sa conception ou de son implantation.Mais surtout, un logiciel qui ne répond pas au métier est un logiciel que ne satisfait pas le client, qu’il soit interne ou non.
+
+Ce mémoire à pour but de répondre à la problématique suivante : comment réduire le fossé entre les équipes MOA et MOE dû à la compréhension du métier et la communication des équipes afin de satisfaire les clients ? 
+
+Dans ce mémoire, il s'agira dans un premier temps de présenter un ensemble d’approches, de techniques, de méthodes et d’outils autours des processus métier. Dans ces différentes approches nous analyserons notamment si le fait de rapprocher le metier au code, notamment avec des conceptions Domain Driven Design permet réellement une appréhension complète du métier de la part des développeurs.
+
+Dans une seconde partie nous traiterons de l'implication de la gestion de projet dans ce processus de rapprochement entre MOA et MOE. En d'autres termes, nous essayerons de démontrer en quoi la gestion de projet peut faire partie des clés de la communication entre les équipes et par conséquent à la compréhention du métier. 
+
+Puis, dans une troisième partie nous tacherons de déterminer si la combinaison d'approches méthodologiques et techniques avec des méthodes de gestions de projet peut drastiquement réduire le fossé entre le métier et le code.
+
+
+
+\cite{dahman}
+\cite{processus}
+\cite{ddd}
+\cite{domain}
+
+\printbibliography
+
+
+
+
+
+
+\end{document}
