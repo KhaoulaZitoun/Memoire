@@ -1,0 +1,35 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{Introduction}
+\label{chap:introduction}
+%\minitoc
+
+Les projets informatiques sont généralement le résultat de l'implantation d'un ou des besoins exprimés. 
+
+Depuis 1994, les résultats du rapport CHAOS du Standish Group sont mis à jour chaque année et montrent les principales raisons d’échec et de succès d’un projet au sein d’un panel représentatif d’entreprises américaines. Les différentes études montrent que les projets qui se terminent dans le temps et le budget avec un périmètre fonctionnel livré conforme au périmètre initialement défini représentent 20\%. Les projets qui se terminent en ayant respecté le temps ou le budget avec un périmètre fonctionnel livré légèrement différent  du périmètre initial représentent 50\%. Enfin les projets qui ont été abandonnés en cours de projet pour diverse raisons représentent 30\%. Il est donc à souligner que le taux d’échec des projets reste important. Par ailleurs, ce rapport montre que parmi les facteurs d'échec, 44,1\% d'entre eux sont relatifs au exigences (exigences incomplètes, manque d'implication des utilisateurs, changement sur les exigences et les spécifications). D'autre part, les facteurs de succès d'un projet relatifs aux exigences représentent 37,1\% (implication des utilisateurs, définition claire des exigences, attentes réalistes).~\cite{livre1}
+Cette étude nous permet donc d’affirmer que l’implication des parties prenantes ainsi que la définition et la gestion des exigences jouent un rôle important dans l’avenir d’un projet.
+
+L'implication des parties prenantes permet notamment de réduire l'écart qui existent entre celles-ci~\cite{article5}. En effet, un écart de communication entre les experts du domaine et les ingénieurs en logiciel a été observé~\cite{article1}, comme cela a été rapporté par des chercheurs.~\cite{article2}. Définir des exigences pour ensuite les implanter peut donc devenir périlleux. Les experts domaines, n'ayant pas forcément des compétences techniques mais métier, et les ingénieurs en logiciel ayant des compétences techniques mais n'appréhendant pas entièrement tous les domaines, il est donc nécessaire de trouver un moyen de définir les exigences tout en s'assurant que les experts puissent les rédiger et les ingénieurs les comprendre. 
+
+D'après la définition du IEEE et du CMMi une exigence est:
+  \textit{\guillemotleft  \begin{enumerate}
+    \item Condition ou capacité nécessaire à un utilisateur pour résoudre un problème ou atteindre un objectif.
+    \item Condition ou capacité qui doit être assurée par un produit pour satisfaire à un contrat, une norme, une spécification ou à d’autres documents imposés formellement. 
+    \item Une représentation documentée de cette condition ou capacité telle que définie en 1. ou 2.
+\end{enumerate}\guillemotright}
+
+Il existe plusieurs niveaux d'exigences : les besoins des utilisateurs, les exigences métier qui sont défini à partir des besoins et les exigences produit qui traduisent la solution fonctionnelle et technique. De plus, il existe plusieurs types d'exigences : les exigences fonctionnelles, les exigences non fonctionnelles, les exigences de contrainte. Dans ce mémoire nous nous axerons sur les exigences fonctionnelles. Après avoir recueilli le besoin des utilisateur il est important de définir les exigences.L'objectif de la définition des exigences est de les exprimer de manière compréhensible par tous.~\cite{Gestion} Les exigences sont exprimées de différentes manières mais pas toujours compréhensibles par tous. Une solution à ceci problématique est l'ingénierie des domaines. Cette dernière est un élément clé pour que l'ingénierie des exigences soit efficace~\cite{article3}.
+
+La spécification des exigences lieés au domaine nécessite un langage d'exigences propre au domaine : les Domain Specific Requirement Language (DSRL). Ces langages permettent de spécifier les exigences en terme d'abstractions de domaine d'application.~\cite{article3} Certaines approches sont génériques et sont des solutions à de nombreuses problématiques générales de certains domaines. Il arrive toutefois que ces approches ne répondent pas à des problèmes spécifiques à un domaine. Une approche spécifique fournit une bien meilleure solution pour un ensemble plus restreint de problèmes.~\cite{article4}  Les Domain Specific Model rendent la modélisation des exigences moins compliquée et réduit l'effort d'apprentissage pour les scientifiques et favorise le génie logiciel dans les projets.~\cite{article5}
+
+\guillemotleft \textit{Le but de l'ingénierie de domaine est d'identifier, de modéliser, de construire, de cataloguer et de diffuser des artefacts qui représentent les points communs et les différences au sein d'un domaine.~\cite{livre3,article4}} \guillemotright. La modélisation de ces artefacts peuvent se faire de différentes façons : par des diagrammes UML, SysML,les DSL (Domain Specific Language), etc que nous présenterons dans la première partie de ce mémoire.
+
+Bien qu'il existe des méthodes pour modéliser le domaine métier qui nous permettrait de définir les exigences fonctionnelles, il n'en reste pas moins que des tests d'acceptation sont nécessaires pour assurer la satisfaction du client. Ces tests sont souvent créés en fonction d'une spécification des exigences et servent à vérifier que les obligations contractuelles sont respectées.~\cite{article6} Il semble nécessaire de déterminer comment valider des exigences orientées domaine en passant par les tests. 
+Il existe beaucoup de recherches et d'implantations d'outils sur des tests basés sur des modèles, la dérivation de tests à partir d'un modèle.~\cite{article7} Dans ce document nous nous intéresseront aux tests relatifs à la recette tels que les tests d'acceptation, appelés aussi tests fonctionnels. Les tests d'acceptation peuvent être spécifiés de plusieurs façons: depuis les user stories basées sur la compréhension de textes suivis jusqu'aux langages formels. Parce que l'exécution des tests d'acceptation est longue et coûteuse, il est hautement souhaitable d'automatiser ce processus. \textit{L'automatisation des tests d'acceptation donne une réponse objective lorsque les exigences fonctionnelles sont remplies.~\cite{article6}}
+
+La définition des exigences fonctionnelles et la vérification de ces dernières jouent donc un rôle important dans la réussite d'un projet. Nous souhaitons donc dans ce mémoire répondre à la problématique suivante : 
+  \textbf{comment à partir d'une spécification d'exigences générer des tests d'acceptation en mettant le domaine métier au coeur de la démarche ? }
+
+
+Dans ce document nous présenterons dans une première section comment définir des exigences, quelques outils de suivi, les différentes méthodes de modélisation du domaine ainsi que les techniques de génération de tests.
+
