@@ -5,12 +5,13 @@ Dans cette section de ce mémoire, nous allons tout d'abord présenter les élé
 
 \section{Workflow général et Critères de comparaison}
 
-Les modèles de gestion de projets les plus répandus sont le cycle en V et la méthode agile scrum. Dans ces modèles, le besoin est recueilli, les exigences sont définies et celles-ci sont vérifiées et testées. Dans le cycle en V schématisé dans la figure, nous nous intéressons aux phases "Analyse des besoins", "Spécifications", "Recette" et "Test de validation". Dans la méthode agile scrum, nous nous intéressons au contenu du product backlog, au contenu du sprint backlog et des user stories car ces étapes représentent la définition des exigences et les tests à réaliser à la fin de chaque sprint. En combinant les deux méthodes et en ne ciblant que les phases projet qui nous intéressent, à savoir les phases d'analyse et de test, nous proposons un workflow générique d'élicitation des exigences et de validation : 
+Les modèles de gestion de projets les plus répandus sont le cycle en V et la méthode agile scrum. Dans ces modèles, le besoin est recueilli, les exigences sont définies, vérifiées et testées. Dans le cycle en V schématisé dans la figure \ref{fig:cylce}, nous nous intéressons aux phases \textbf{Analyse des besoins}, \textbf{Spécifications}, \textbf{Recette} et \textbf{Test de validation}. Dans la méthode agile scrum, nous nous intéressons au contenu du product backlog, au contenu du sprint backlog et des user stories car ces étapes représentent \textbf{la définition des exigences et les tests à réaliser à la fin de chaque sprint}. En combinant les deux méthodes et en ne ciblant que les phases projet qui nous intéressent, à savoir \textbf{les phases d'analyse et de test}, nous proposons de considérer comme workflow génériques, celui du cycle en V et de la méthode Scrum.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images/cycles.png}
     \caption{Phases ciblées dans ce mémoire}
+    \label{fig:cylce}
 \end{figure}
 
 Dans cet état de l'art, nous comparerons et analyserons les différents outils et méthodes qui répondent entièrement ou partiellement à notre problématique selon les critères suivants :
@@ -43,8 +44,8 @@ Il existe un moyen d’automatiser les tests\\
         \subsubsection{Des exigences aux tests}
         Il existe plusieurs outils sur le marché qui permettent aux clients de renseigner les tests d’acceptation à dérouler ainsi que les résultats attendus pour satisfaire les exigences. Parmi ces outils, HP ALM (Application Lifecycle Management) anciennement Quality Center. Il existe d’autres outils relativement similaire à HP ALM mais nous décidons de présenter celui-ci car nous avons récemment eu l’occasion de travailler avec au sein de Capgemini pour un client.
         
-        \paragraph{HP Application Lifecycle Management (ALM)}
-        Il existe plusieurs outils sur le marché qui permettent aux clients de renseigner les tests d’acceptation à dérouler ainsi que les résultats attendus pour satisfaire les exigences. Parmi ces outils, HP ALM (Application Lifecycle Management) anciennement Quality Center. Nous décidons de présenter cet outil car nous avons eu l'occasion de l'utiliser en entreprise en collaboration avec un client. 
+        \paragraph{HP Application Lifecycle Management (ALM)} \protect
+        
         Cet outil permet la collaboration des différentes parties prenantes. En effet, les chefs de projets peuvent planifier le projet en déterminant le nombre le périmètre de cycles de releases, la spécification des exigences est également réalisée par les business analystes, les testeurs peuvent dérouler les tests, etc. Tout ceci permet d'avoir une vision globale du projet. La figure \ref{fig:hp} représente une instance des parties que nous avons ciblées du cycle en V. 
         
          \begin{figure}[H]
@@ -68,8 +69,7 @@ Il existe un moyen d’automatiser les tests\\
         
         \paragraph{Framework For Integrated Test (FIT)}
         
-        Des frameworks comme FitNess\cite{fitnesse} basés sur FIT (Framework For Integrated Test) tentent de répondre à la problématique de l’automatisation des tests à partir des exigences. FIT est un moteur qui traite chaque table en utilisant le code fixture à laquelle la table correspond.\textit{\guillemotleft Une fixture est un morceau de code qui permet de fixer un environnement logiciel pour exécuter des tests logiciels. Cet environnement constant est toujours le même à chaque exécution des tests. Il permet de répéter les tests indéfiniment et d'avoir toujours les mêmes résultats~\cite{fixture}.\guillemotright}
-        Fitness permet d'afficher les résultats des tests FIT. Les tests FIT sont donc des représentations tabulaires des exigences. A partir de ces tables, des tests sont générés~\cite{article6}.Les attentes des clients sont comparés aux résultats réels.~\cite{fitnesse}
+        Des frameworks comme FitNess\cite{fitnesse} basés sur FIT (Framework For Integrated Test) tentent de répondre à la problématique de l’automatisation des tests à partir des exigences. FIT est un moteur qui traite chaque table qui représente les exigences en utilisant le code fixture à laquelle la table correspond.\textit{\guillemotleft Une fixture est un morceau de code qui permet de fixer un environnement logiciel pour exécuter des tests logiciels. Cet environnement constant est toujours le même à chaque exécution des tests. Il permet de répéter les tests indéfiniment et d'avoir toujours les mêmes résultats~\cite{fixture}.\guillemotright} Le framework Fitness permet d'afficher les résultats de ces derniers. Les tests FIT sont donc des représentations tabulaires des exigences. A partir de ces tables, des tests sont générés~\cite{article6}.Les attentes des clients sont comparés aux résultats réels.~\cite{fitnesse}
 
             \begin{figure}[H]
                 \centering
@@ -77,49 +77,38 @@ Il existe un moyen d’automatiser les tests\\
                 \caption{Exemple d'une table FIT et de la fixture générée}
             \end{figure}
 
-        FitNess permet de d'écrire et de lire les exigences de façon simplifiée mais pas simple.. Les tests sont facilement mis en oeuvre par les développeurs d'après l'article~\cite{article6}. Cependant \textit{\guillemotleft Pour rédiger une série complète de tests, il est souhaitable d'acquérir des connaissances et de l'expérience dans les domaines du test et de l'ingénierie logicielle (par exemple, un ingénieur en assurance qualité pourrait travailler en étroite collaboration avec le client).\guillemotright}. FitNess permet également de générer des tests automatiquement. Toutefois, FIT ne semble pas gérer toutes les exigences : un article~\cite{article6} montre que l'hypothèse selon laquelle 100\% des exigences implémentées auraient des tests FIT correspondants est erroné. Les informations non pertinentes sont plus difficiles à inclure dans des tableaux bien structurés que dans des documents rédigés en prose.
+        FitNess permet d'écrire et de lire les exigences de façon simplifiée mais pas simple. Les tests sont facilement mis en oeuvre par les développeurs d'après l'article~\cite{article6}. Cependant \textit{\guillemotleft Pour rédiger une série complète de tests, il est souhaitable d'acquérir des connaissances et de l'expérience dans les domaines du test et de l'ingénierie logicielle (par exemple, un ingénieur en assurance qualité pourrait travailler en étroite collaboration avec le client).\guillemotright}. FitNess permet également de générer des tests automatiquement. Toutefois, FIT ne semble pas gérer toutes les exigences : un article~\cite{article6} montre que l'hypothèse selon laquelle 100\% des exigences implémentées auraient des tests FIT correspondants est erronée. Les informations non pertinentes sont plus difficiles à inclure dans des tableaux bien structurés que dans des documents rédigés en prose.
          
+Bien que chacun des éléments présentés présentent certains avantages, il n'en reste pas moins que les problèmes liés au domaine métier et à l'automatisation ne sont pas correctement ou entièrement appréhendés. Nous proposons dans un premier temps de scinder la problématique en deux phases. La première phase consiste en la modélisation des exigences. Et la seconde phase consiste en l'automatisation de celles-ci à partir de leur modélisation. 
 
-        
-        \paragraph{Ravenflow - Bender RBY - Rational Rhapsody }
-        https://searchsoftwarequality.techtarget.com/answer/Tools-that-generate-test-cases-from-software-requirements
-        
-        Il existe des outils tel que Ravenflow qui permettent de générer des cas de tests à partir de formes d'exigences. Ce type d'outil se base sur des cas d'utilisation dans un format structuré et identifie chaque chemin à traver ces derniers. 
-        
-        Il existe également des outils plus rigoureux tel que Bender RBT qui développe des flux logiques de graphes cause/effet à partir d'une méthode structurée de documentation des spécifications fonctionnelles et identifie l'ensemble minimum de tests.
-        
-        Les outils d'analyse d'état, tels que Rational Rhapsody, dessinent un diagramme d'état à partir de descriptions structurées des différents états d'une unité, qui peuvent être un périphérique ou un programme.L'état détermine les comportements que l'unité doit et ne doit pas présenter, y compris ce qui déclenche la transition vers un autre état spécifié. Les cas de test sont alors définis pour exercer chaque chemin d'états, démontrant les comportements qu'il devrait présenter et assurant que ceux qu'il ne devrait pas présenter ne se produisent pas.
-        
-        Bien que chacune de ces méthodes présente certains avantages, il est important de noter qu'aucune n'est susceptible d'intercepter des problèmes liés à des exigences métier incorrectes ou négligées, des facteurs de qualité, d'autres moyens d'invoquer un processus décisionnel ou des décisions de conception de spécifications fonctionnelles.
-        
-        Ces différents outils se basent sur une structure qui modélise les exigences. Nous proposons donc de d'abord modéliser les exigences pour en générer les tests.
-        
     \subsection{Modélisation des exigences}
         
-    Nous avons vu dans la section précédente que les processus permettant de passer des exigences aux tests étaient insuffisants du point de vue de notre problématique. Nous proposons de présenter dans un premier temps différentes manières de modéliser les exigences fonctionnelles. Un modèle est une représentation abstraite de la réalité. Un outil est un formalisme, une langue permettant d’exprimer un modèle. Une exigence peut être décrite par plusieurs modèles. Par conséquent, nous proposons de comparer les différents modèles selon les critères suivants:
-    \begin{enumerate}
-        \item La modélisation doit pouvoir exprimer l’exigence
-    	\item La modélisation doit être lisible par n’importe quelle partie prenante
-    	\item La modélisation doit pouvoir être écrite par les personnes qui expriment l’exigence
-    	\item La modélisation doit permettre de générer des tests
-    	\item Les tests générés doivent être des tests fonctionnels
-    	\item N’importe quel domaine peut modéliser avec cet outil.
-    	\item Le domaine est au coeur de la modélisation
-    \end{enumerate}
-    Nous proposons un cas pratique pour pouvoir comparer les outils : une application pour réserver une table à un restaurant depuis son téléphone.
+        Nous avons vu dans la section précédente que les processus permettant de passer des exigences aux tests étaient insuffisants du point de vue de notre problématique. Nous proposons de présenter dans un premier temps différentes manières de modéliser les exigences fonctionnelles. Un modèle est une représentation abstraite de la réalité. Un outil est un formalisme, une langue permettant d’exprimer un modèle. Une exigence peut être décrite par plusieurs modèles. Par conséquent, nous proposons de comparer les différents modèles selon les critères suivants:
+        \begin{enumerate}
+            \item La modélisation doit pouvoir exprimer l’exigence
+        	\item La modélisation doit être lisible par n’importe quelle partie prenante
+        	\item La modélisation doit pouvoir être écrite par les personnes qui expriment l’exigence
+        	\item La modélisation doit permettre de générer des tests
+        	\item Les tests générés doivent être des tests fonctionnels
+        	\item N’importe quel domaine peut modéliser avec cet outil.
+        	\item Le domaine est au coeur de la modélisation
+        \end{enumerate}
+        Nous proposons un cas pratique pour pouvoir comparer les outils : une application pour réserver une table à un restaurant depuis son téléphone.
+        
         \subsubsection{Modélisation structurelle}
         
-            \paragraph{Le diagramme entité association}
-            Ce diagramme représente graphiquement des entités et les interactions entre elles à travers des relations (ou associations). Une entité est un objet comme par exemple "Utilisateur", "Restaurant",etc. Il est souvent utilisé pour modéliser les relations entre les tables d'une base de données. Il repose sur différents concepts : les entités, les associations, les attributs d'entités ou d'association et les cardinalités. Ce modèle permet d'identifier et de caractériser les objets du domaine et d'établir leurs liens.
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=\textwidth]{images/e_r (1).png}
-                \caption{Diagramme entité/association de notre cas}
-            \end{figure}
-            Si nous comparons ce diagramme à notre grille d'exigences nous notons qu'il permet d'exprimer des exigences fonctionnelles mais de façon incomplète. En effet, dans ce diagramme, il n'y a aucune précision quant à comment se connecter, sur les conditions d'annulation, sur la façon dont le restaurant doit recevoir sa réservation, etc. De plus, ce diagramme est facilement lisible par tout le monde, et le temps d'apprentissage pour produire ce type de diagramme semble acceptable au vu de sa simplicité. Toutefois, ce type de diagramme ne permet pas de générer des tests et les représentations graphiques proposées ne sont pas orientées domaine. 
-
-            \begin{table}[H]
+        \paragraph{Le diagramme entité association}
+        
+        Ce diagramme représente graphiquement des entités et les interactions entre elles à travers des relations (ou associations). Une entité est un objet comme par exemple "Utilisateur", "Restaurant",etc. Il est souvent utilisé pour modéliser les relations entre les tables d'une base de données. Il repose sur différents concepts : les entités, les associations, les attributs d'entités ou d'association et les cardinalités. Ce modèle permet d'identifier et de caractériser les objets du domaine et d'établir leurs liens.
+        \begin{figure}[H]
             \centering
+            \includegraphics[width=\textwidth]{images/er1.png}
+            \caption{Diagramme entité/association de notre cas}
+        \end{figure}
+        Si nous comparons ce diagramme à notre grille d'exigences, nous notons qu'il permet d'exprimer des exigences fonctionnelles mais de façon incomplète. En effet, dans ce diagramme, il n'y a aucune précision quant à comment se connecter, sur les conditions d'annulation, sur la façon dont le restaurant doit recevoir sa réservation, etc. De plus, ce diagramme est facilement lisible par tout le monde, et le temps d'apprentissage pour produire ce type de diagramme semble acceptable au vu de sa simplicité. Toutefois, ce type de diagramme ne permet pas de générer des tests et les représentations graphiques proposées ne sont pas orientées domaine. 
+
+        \begin{table}[H]
+        \centering
              \begin{tabular}{|p{25em}|p{5em}|} 
              \hline
             Critère & Répond au critère \\ [0.5ex] 
@@ -141,7 +130,6 @@ Il existe un moyen d’automatiser les tests\\
             \end{tabular}
             \caption{Évaluation du diagramme entité-association selon les critères défini}
             \end{table}
-
 
         \paragraph{Le diagramme de classe}
         
@@ -179,90 +167,89 @@ Il existe un moyen d’automatiser les tests\\
         \caption{Évaluation du diagramme de classe selon les critères défini}
         \end{table}
 
+        \paragraph{Les diagrammes de flux de données}
 
-    \paragraph{Les diagrammes de flux de données}
+        Ce diagramme popularisé à la fin des années 1970 permet de représenter graphiquement comment l'information circule dans un processus ou un système.Ce type de diagramme est composé de :
+         \begin{itemize}
+            \item Flux de données avec des étiquettes 
+            \item Des transformations de données (en cercle ou bulles) pour schématiser les processus
+            \item Des magasins de données (lignes horizontales parallèles)
+            \item Entités extérieures au système (rectangles)
+        \end{itemize}
 
-    Ce diagramme popularisé à la fin des années 1970 permet de représenter graphiquement comment l'information circule dans un processus ou un système.Ce type de diagramme est composé de :
-    \begin{itemize}
-        \item Flux de données avec des étiquettes 
-        \item Des transformations de données (en cercle ou bulles) pour schématiser les processus
-        \item Des magasins de données (lignes horizontales parallèles)
-        \item Entités extérieures au système (rectangles)
-    \end{itemize}
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=\textwidth]{dataflow.PNG}
-        \caption{Exemple de diagramme de flux de données}
-    \end{figure}
-    
-    Les diagrammes de flux de donnée proposent des niveaux de détail numérotés 0, 1 ou 2 et vont parfois jusqu'à 3 ou plus.
-
-    \textit{Niveau 0}
-    
-    Ce diagramme est appelé diagramme de contexte. Il représente une vue globale du système, montrant un processus unique de haut avec ses relations externes. Ce diagramme est généralement compréhensible par toutes les parties prenantes  mais de part son aspect général ne fournit pas assez de détails pour spécifier des tests d'acceptation. 
-    \begin{figure}[H]
+        \begin{figure}[H]
             \centering
-            \includegraphics[width=\textwidth]{DFD1.PNG}
-            \caption{Exemple de DFD de niveau 0}
+            \includegraphics[width=\textwidth]{dataflow.PNG}
+            \caption{Exemple de diagramme de flux de données}
         \end{figure}
-        
-    \textit{Niveau 1}
+    
+         Les diagrammes de flux de donnée proposent des niveaux de détail numérotés 0, 1 ou 2 et vont parfois jusqu'à 3 ou plus.
 
-    Ce diagramme fournit des détails aux diagramme de context. Les fonctions principales du système sont mises en évidence. Le processus unique est découpé en sous processus.
+        \textit{Niveau 0}
+    
+        Ce diagramme est appelé diagramme de contexte. Il représente une vue globale du système, montrant un processus unique de haut avec ses relations externes. Ce diagramme est généralement compréhensible par toutes les parties prenantes  mais de part son aspect général ne fournit pas assez de détails pour spécifier des tests d'acceptation. 
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width=\textwidth]{DFD1.PNG}
+                \caption{Exemple de DFD de niveau 0}
+            \end{figure}
+            
+        \textit{Niveau 1}
 
-    \begin{figure}[H]
+        Ce diagramme fournit des détails aux diagramme de context. Les fonctions principales du système sont mises en évidence. Le processus unique est découpé en sous processus.
+    
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{DFD2.PNG}
+            \caption{Exemple de DFD de niveau 1}
+        \end{figure}
+        \textit{Niveau 2}
+    
+         Ce diagramme entre encore plus en détail dans la description des processus. 
+    
+        Les niveaux de détails 3 et 4 sont possibles à mettre en place mais restent assez rares. 
+    
+        Avec un diagramme assez détaillé, les développeurs peuvent l'utiliser pour commencer à rédiger du pseudocode. Un DFD peut fournir un bon point de départ pour modéliser les exigences mais lors du système réel, il n'est pas suffisant pour les testeurs. Les DFD sont même moins précis que le langage naturel pour les développeurs. Ce type de modélisation est intéressant pour visualiser les fonctions et les interfaces mais n'est pas suffisant pour éliciter correctement une exigence. \cite{livre4}
+
+        \begin{table}[H]
         \centering
-        \includegraphics[width=\textwidth]{DFD2.PNG}
-        \caption{Exemple de DFD de niveau 1}
-    \end{figure}
-\textit{Niveau 2}
-    
-    Ce diagramme entre encore plus en détail dans la description des processus. 
-    
-    Les niveaux de détails 3 et 4 sont possibles à mettre en place mais restent assez rares. 
-    
-    Avec un diagramme assez détaillé, les développeurs peuvent l'utiliser pour commencer à rédiger du pseudocode. Un DFD peut fournir un bon point de départ pour modéliser les exigences mais lors du système réel, il n'est pas suffisant pour les testeurs. Les DFD sont même moins précis que le langage naturel pour les développeurs. Ce type de modélisation est intéressant pour visualiser les fonctions et les interfaces mais n'est pas suffisant pour éliciter correctement une exigence. \cite{livre4}
+         \begin{tabular}{|p{25em}|p{5em}|} 
+         \hline
+        Critère & Répond au critère \\ [0.5ex] 
+         \hline
+         La modélisation doit pouvoir exprimer l’exigence & \cellcolor[HTML]{D03737}NON\\
+         \hline
+        La modélisation doit être lisible par n’importe quelle partie prenante & \cellcolor[HTML]{699A73}OUI\\
+         \hline
+        La modélisation doit pouvoir être écrite par les personnes qui expriment l’exigence &\cellcolor[HTML]{699A73} OUI \\
+         \hline
+        La modélisation doit permettre de générer des tests & \cellcolor[HTML]{D03737}NON \\
+         \hline
+        Les tests générés doivent être des tests fonctionnels &\cellcolor[HTML]{D03737} NON\\ 
+         \hline
+        N’importe quel domaine peut modéliser avec cet outil.&\cellcolor[HTML]{D03737} NON\\ 
+         \hline
+        Le domaine est au coeur de la modélisations &\cellcolor[HTML]{D03737} NON\\ 
+        \hline 
+        \end{tabular}
+        \caption{Évaluation du diagramme de flux de données selon les critères défini}
+        \end{table}
 
-    \begin{table}[H]
-    \centering
-     \begin{tabular}{|p{25em}|p{5em}|} 
-     \hline
-    Critère & Répond au critère \\ [0.5ex] 
-     \hline
-     La modélisation doit pouvoir exprimer l’exigence & \cellcolor[HTML]{D03737}NON\\
-     \hline
-    La modélisation doit être lisible par n’importe quelle partie prenante & \cellcolor[HTML]{699A73}OUI\\
-     \hline
-    La modélisation doit pouvoir être écrite par les personnes qui expriment l’exigence &\cellcolor[HTML]{699A73} OUI \\
-     \hline
-    La modélisation doit permettre de générer des tests & \cellcolor[HTML]{D03737}NON \\
-     \hline
-    Les tests générés doivent être des tests fonctionnels &\cellcolor[HTML]{D03737} NON\\ 
-     \hline
-    N’importe quel domaine peut modéliser avec cet outil.&\cellcolor[HTML]{D03737} NON\\ 
-     \hline
-    Le domaine est au coeur de la modélisations &\cellcolor[HTML]{D03737} NON\\ 
-    \hline 
-    \end{tabular}
-    \caption{Évaluation du diagramme de flux de données selon les critères défini}
-    \end{table}
-
-    Les modélisations qui représentent une vue beaucoup trop globale et seulement structurelle des exigences semblent ne pas être suffisantes pour remplir tous les critères que nous avons défini. Il semble également nécessaire de représenter le comportement des exigences, d'ajouter une partie dynamique à l'expression de ces exigences. 
+        Les modélisations qui représentent une vue beaucoup trop globale et seulement structurelle des exigences semblent ne pas être suffisantes pour remplir tous les critères que nous avons défini. Il semble également nécessaire de représenter le comportement des exigences, d'ajouter une partie dynamique à l'expression de ces exigences. 
         
         \subsubsection{Modélisation comportementale}
 
-            \paragraph{Le diagramme de cas d'utilisation}
+        \paragraph{Le diagramme de cas d'utilisation}
 
-            Ce diagramme permet de décrire les différents acteurs du système et les fonctionnalités que chacun d'entre eux doit pouvoir réaliser. Chaque fonctionnalité est généralement représentée par un ovale dans lequel l'action est décrite. Les traits entre les acteurs et les cas d'utilisations sont des associations et/ou des inclusions. 
+        Ce diagramme permet de décrire les différents acteurs du système et les fonctionnalités que chacun d'entre eux doit pouvoir réaliser. Chaque fonctionnalité est généralement représentée par un ovale dans lequel l'action est décrite. Les traits entre les acteurs et les cas d'utilisations sont des associations et/ou des inclusions. 
 
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=\textwidth]{images/useeCAse.png}
-                \caption{Diagramme de cas d'utilisation de notre cas}
-            \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{images/useeCAse.png}
+            \caption{Diagramme de cas d'utilisation de notre cas}
+        \end{figure}
 
-            Ce diagramme permet d'avoir une vision très global de ce que doit pouvoir faire un acteur mais ne prend pas en compte les différents scénarios qui peuvent exister et qui peuvent être en eux même des exigences à spécifier.
+        Ce diagramme permet d'avoir une vision très global de ce que doit pouvoir faire un acteur mais ne prend pas en compte les différents scénarios qui peuvent exister et qui peuvent être en eux même des exigences à spécifier.
 
         \begin{table}[H]
         \centering
@@ -291,11 +278,11 @@ Il existe un moyen d’automatiser les tests\\
         \paragraph{Le scénario}
 
         Le scénario est une description textuelle d'un cas d'utilisation. Décrire un cas d'utilisation permet notamment de déterminer quelle action arrive avant ou après une autre action, de bien comprendre comment la fonctionnalité doit se dérouler ou encore de connaître les contraintes relatives à ce cas. Un scénario est représenté par une fiche descriptive composé de l'identification, de la description du scénario, la et les post-conditions et les compléments. 
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=\textwidth]{scenar.png}
-                \caption{Exemple de fiche descriptive d'une scénario}
-            \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\textwidth]{scenar.png}
+            \caption{Exemple de fiche descriptive d'une scénario}
+        \end{figure}
         
         Avec ce type de fiches descriptive que l'on peut standardiser, nous avons un début de formalisme d'une exigence. Toutefois, la description de l'exigence reste purement textuelle. Il est donc compliqué à partir de cette fiche de générer entièrement un test. Il existe une façon plus schématique et moins textuel de représenter un scénario : le diagramme de séquence.
         \begin{table}[H]
@@ -322,7 +309,7 @@ Il existe un moyen d’automatiser les tests\\
         \caption{Évaluation du scénario selon les critères défini}
         \end{table}
     
-        \paragraph{}{Le diagramme de séquence}
+        \paragraph{Le diagramme de séquence}
 
         Le diagramme de séquence permet de décrire de façon détaillée les interactions entre les différentes instances du système pour un scénario d'utilisation donné. 
         
@@ -397,8 +384,7 @@ Il existe un moyen d’automatiser les tests\\
     
          \begin{figure}[H]
             \centering
-            \includegraphics[width=\textwidth]{diagExi.PNG}
-            \includegraphics[width=\textwidth]{diagexi2.PNG}
+            \includegraphics[width=\textwidth]{diagExi.jpg}
             \caption{Exemple de diagramme d'exigences~\cite{diagExi}}
         \end{figure}
     
@@ -440,7 +426,7 @@ Il existe un moyen d’automatiser les tests\\
         
         Malgré la possibilité à partir des méthodes formelles de générer des cas de tests, il n'en reste pas moins que ces méthodes ne sont pas adapté à la compréhension de tous.
     
-     \subsubsection{Les Domain Specific Languages}
+        \subsubsection{Les Domain Specific Languages}
 
         Au delà de la capacité pour un type de modélisation à générer des tests, il important que toutes les exigences fonctionnelles puissent être correctement modélisées. Nous avons vu que les modélisations comme UML ou encore les diagrammes de flux permettent d'avoir une vision globale et/ou détaillée des exigences. Toutefois, le formalisme de ces diagrammes imposent des notations, des abstractions et conception. Or, certains domaines nécessitent une flexibilité quant à l'expression des exigences fonctionnelles. De plus, ces modélisations sont souvent pas les meilleures pour les utilisateurs finaux désirant une notation plus familière~\cite{article3}. En effet, UML peut être difficile à appréhender pour les clients. Cette sous partie présente les DSL qui sont des langages de modélisations spécifiques à un domaine. Avec ces langages déclaratifs~\cite{article4} il est possible d'une part de fournir des abstractions au niveau du domaine et d'autre part de permettre aux clients d'exprimer les exigences avec un langage dédié à leur domaine qui leur est compréhensible.
     
@@ -482,7 +468,7 @@ Il existe un moyen d’automatiser les tests\\
                 \caption{Exemple de rapport EasyB}
             \end{figure}
         
-        \subsection{JDave}
+        \subsubsection{JDave}
         
         Jdave est un framework qui permet de spécifier le comportement des classes. Un comportement défini le comportement d'une classe selon un certain context. Cet outil nous parait beaucoup trop technique et intervient sur le code plutôt que sur les abstraction domaine. 
         
@@ -491,9 +477,16 @@ Il existe un moyen d’automatiser les tests\\
         
         Ces deux derniers outils sont beaucoup trop spécifiques au langage de programmation.
 
-
-\subsection{Conclusion}
-Pour conclure, nous avons vu que les outils passant des exigences rédigées en langage naturel aux tests ne proposent pas de manière d'automatiser les tests d'acceptation. Nous avons donc ensuite présenté différentes façons de modéliser les exigences pour pouvoir dans un second temps générer des tests à partir de ceux-ci. Bien que les notations UMLs/SysML soient riches en diagrammes et proposent de la génération de code, il est nécessaire d'avoir une certaine connaissance en modélisation et les notions spécifiques d'un domaine peuvent être mal (ou pas du tout) représentées. Les Domain Specific Language semblent être une bonne alternative : ils proposent de mettre le domaine au coeur de la modélisation et d'en générer les tests. Les outils comme Cocumber montrent qu'il est possible à partir DSL orienté langage naturel de générer des tests. 
+        \subsubsection{Ravenflow - Bender RBY - Rational Rhapsody }
+        
+        Il existe des outils tel que Ravenflow qui permettent de générer des cas de tests à partir de formes d'exigences. Ce type d'outil se base sur des cas d'utilisation dans un format structuré et identifie chaque chemin à traver ces derniers. 
+        
+        Il existe également des outils plus rigoureux tel que Bender RBT qui développe des flux logiques de graphes cause/effet à partir d'une méthode structurée de documentation des spécifications fonctionnelles et identifie l'ensemble minimum de tests.
+        
+        Les outils d'analyse d'état, tels que Rational Rhapsody, dessinent un diagramme d'état à partir de descriptions structurées des différents états d'une unité, qui peuvent être un périphérique ou un programme.L'état détermine les comportements que l'unité doit et ne doit pas présenter, y compris ce qui déclenche la transition vers un autre état spécifié. Les cas de test sont alors définis pour exercer chaque chemin d'états, démontrant les comportements qu'il devrait présenter et assurant que ceux qu'il ne devrait pas présenter ne se produisent pas.
+    
+    \subsection{Conclusion}
+    Pour conclure, nous avons vu que les outils passant des exigences rédigées en langage naturel aux tests ne proposent pas de manière d'automatiser les tests d'acceptation. Nous avons donc ensuite présenté différentes façons de modéliser les exigences pour pouvoir dans un second temps générer des tests à partir de ceux-ci. Bien que les notations UMLs/SysML soient riches en diagrammes et proposent de la génération de code, il est nécessaire d'avoir une certaine connaissance en modélisation et les notions spécifiques d'un domaine peuvent être mal (ou pas du tout) représentées. Les Domain Specific Language semblent être une bonne alternative : ils proposent de mettre le domaine au coeur de la modélisation et d'en générer les tests. Les outils comme Cocumber montrent qu'il est possible à partir DSL orienté langage naturel de générer des tests. En effet, les scénarios sont modélisés à travers des DSL et permettent de générer des tests. Toutefois, nous souhaitons améliorer la phase de recette en proposant un retour des tests au niveau des exigences. Nous détaillerons cette solution dans le chapitre 2 de ce mémoire. 
 
 %%% Local Variables: 
 %%% mode: latex
